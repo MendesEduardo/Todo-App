@@ -1,0 +1,26 @@
+.addTask {
+    background-color: black;
+    position: relative;
+    border-radius: 0.2em;
+    background: #b0b0b0;
+    box-shadow: 8px 8px 20px #000000;
+
+    button {
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border: none;
+    }
+
+    input {
+        padding: 0.5em;
+        margin: 0.5em 0;
+        width: 90%;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        color: #FFF;
+        position: relative;
+    }
+}
