@@ -4,10 +4,14 @@
     align-items: center;
     justify-content: space-between;
     color: #FFF;
-
     h1 {
         font-size: 50px;
     }
-
-
+    button {
+        background-color: transparent;
+        border: none;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }

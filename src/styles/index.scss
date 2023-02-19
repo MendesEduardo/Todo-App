@@ -8,16 +8,16 @@
     margin: 0;
 }
 
-.light {
-    height: 100vh;
-    background: url('../../public/assets/bg-desktop-light.jpg') no-repeat;
-    background-color: white;
-}
-
-.dark {
+.bg-dark {
     height: 100vh;
     background: url('../../public/assets/bg-desktop-dark.jpg') no-repeat;
-    background-color: black;
+    background-color: var(--very-dark-blue);
+}
+
+.bg-light {
+    height: 100vh;
+    background: url('../../public/assets/bg-desktop-light.jpg') no-repeat;
+    background-color: var(--very-light-gray);
 }
 
 body {

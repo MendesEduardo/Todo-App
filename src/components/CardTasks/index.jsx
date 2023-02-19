@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import AddTask from '../AddTask';
 import TasksList from '../TasksList';
+import Footer from '../Footer';
 
 function CardTasks() {
     const [tasks, setTasks] = useState([]);
@@ -28,6 +29,9 @@ function CardTasks() {
                 setTasks={setTasks}
                 setEditId={setEditId}
                 setTitleTask={setTitleTask}
+            />
+            <Footer
+                tasks={tasks}
             />
         </>
     )

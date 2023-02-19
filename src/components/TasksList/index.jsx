@@ -1,8 +1,10 @@
 import axios from 'axios';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import './TasksList.scss';
 
 function TasksList({ tasks, setTasks, setEditId, setTitleTask }) {
-
+  const { theme } = useContext(ThemeContext);
   const onDelete = id => {
     axios.delete(`http://localhost:3002/tasks/${id}`)
       .then(res => setTasks(tasks.filter(task => task._id !== id)))
@@ -31,15 +33,37 @@ function TasksList({ tasks, setTasks, setEditId, setTitleTask }) {
   return (
     <ul className='tasksList'>
       {tasks.map((task) => (
-        <li key={task._id}>
-          <input type="radio" checked={task.completed} onClick={() => onComplete(task._id)} />
-          {task.title}{' '}
-          <button type="button" onClick={() => onEdit(task._id)}>
-            Editar
+        <li key={task._id}
+          className={`task ${theme}`}
+        >
+          <button
+            onClick={() => onComplete(task._id)}>
+            {task.completed ?
+              <img
+                className='check'
+                src='/assets/icon-check.svg'
+                alt='Completed'
+              /> :
+              <button className='incompleteTasks'></button>
+            }
           </button>
-          <button type="button" onClick={() => onDelete(task._id)}>
-            Excluir
-          </button>
+          <p>
+            {task.title}{' '}
+          </p>
+          <article className='config'>
+            <button
+              type="button"
+              onClick={() => onEdit(task._id)}
+            >
+              <img src='/assets/icon-edit.svg' alt="" />
+            </button>
+            <button
+              type="button"
+              onClick={() => onDelete(task._id)}
+            >
+              <img src='/assets/icon-cross.svg' alt="" />
+            </button>
+          </article>
         </li>
       ))}
     </ul>

@@ -1,24 +1,19 @@
-import { useState } from 'react';
-import CardTasks from './CardTasks';
-import Container from './Container';
-import Header from './Header';
+import CardTasks from './components/CardTasks';
+import Container from './components/Container';
+import Header from './components/Header';
 import './styles/index.scss';
+import ThemeProvider from './context/ThemeContext';
 
 function App() {
-  const [themeColor, setThemeColor] = useState('light');
-
-  const toggleThemeColor = () => {
-    setThemeColor(themeColor === 'light' ? 'dark' : 'light');
-  };
   return (
-
-      <main className={`${themeColor}`}>
+    <ThemeProvider>
+      <main>
         <Container>
-          <Header toggleThemeColor={toggleThemeColor} themeColor={themeColor}/>
+          <Header />
           <CardTasks />
         </Container>
       </main>
-
+    </ThemeProvider>
   );
 }
 

@@ -1,7 +1,10 @@
 import axios from 'axios';
+import { useContext } from 'react';
+import { ThemeContext } from '../../context/ThemeContext';
 import './AddTask.scss';
 
 function AddTask({ editId, setEditId, titleTask, setTitleTask, tasks, setTasks }) {
+  const { theme } = useContext(ThemeContext);
   const onSubmit = (event) => {
     event.preventDefault();
     if (editId) {
@@ -50,11 +53,11 @@ function AddTask({ editId, setEditId, titleTask, setTitleTask, tasks, setTasks }
   };
 
   return (
-    <form onSubmit={onSubmit} className='addTask'>
+    <form onSubmit={onSubmit} className={`addTask ${theme}`}>
       <button type="submit">
-        {editId ? 'AT' : 'ADD'}
+        {editId ? 'ATT' : '+'}
       </button>
-      <input value={titleTask} onChange={e => setTitleTask(e.target.value)} />
+      <input placeholder='Create a new todo' value={titleTask} onChange={e => setTitleTask(e.target.value)} />
     </form>
   );
 }

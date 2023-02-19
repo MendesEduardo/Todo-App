@@ -1,0 +1,42 @@
+.addTask {
+    box-shadow: 5px 5px 10px #000000;
+    border-radius: 0.2em;
+    display: flex;
+    align-items: center;
+
+    button {
+        margin: 0 0 0 0.5em;
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+        border: 2px solid var(--dark-grayish-blue);
+        background-color: transparent;
+        border-radius: 50%;
+        color: var(--dark-grayish-blue);
+
+        &:hover {
+            cursor: pointer;
+            color: var(--very-dark-blue);
+            border: 2px solid var(--very-dark-blue);
+        }
+    }
+
+    input {
+        padding: 1em;
+        margin: 0.5em 0;
+        width: 90%;
+        height: 40px;
+        background-color: transparent;
+        border: none;
+        color: var(--dark-grayish-blue);
+        position: relative;
+    }
+}
+
+.light {
+    background: var(--very-light-gray);
+}
+
+.dark {
+    background: var(--very-dark-desaturated-blue);
+}

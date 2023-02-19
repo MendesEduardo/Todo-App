@@ -1,0 +1,70 @@
+.tasksList {
+    margin-top: 2em;
+    box-shadow: 5px 5px 10px #000000;
+    border-radius: 0.2em;
+
+    .task {
+        border-radius: 0.2em 0.2em 0 0;
+        list-style: none;
+        text-align: center;
+        padding: 1em;
+        background: var(--very-light-gray);
+        border-bottom: 2px solid var(--dark-grayish-blue);
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            max-width: 200px;
+            height: auto;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .check {
+            width: 20px;
+            height: 18px;
+            padding: 4px;
+            background: linear-gradient(15deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+            border-radius: 50%;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .config {
+            img {
+                margin-right: 1em;
+            }
+        }
+
+        .incompleteTasks {
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--dark-grayish-blue);
+            border-radius: 50%;
+        }
+    }
+
+    .dark {
+        background-color: var(--very-dark-desaturated-blue);
+        color: var(--very-light-gray);
+    }
+
+}

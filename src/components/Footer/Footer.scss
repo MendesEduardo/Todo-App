@@ -1,0 +1,39 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5em 0;
+    box-shadow: 5px 5px 10px #000000;
+    border-radius: 0 0 0.2em 0.2em;
+    color: var(--dark-grayish-blue);
+
+
+    h3 {
+        font-size: 12px;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        list-style: none;
+        gap: 1em;
+
+        li {
+            &:hover {
+                color: var(--very-dark-blue);
+                cursor: pointer;
+            }
+        }
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: var(--dark-grayish-blue);
+
+        &:hover {
+            color: var(--very-dark-blue);
+            cursor: pointer;
+        }
+    }
+}
